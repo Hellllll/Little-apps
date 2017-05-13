@@ -1,0 +1,140 @@
+body, div, p, img {
+			padding: 0;
+			margin: 0;
+}
+
+body {
+	background-color: #fff;
+	color: #555;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased; 
+}
+.wrap {
+	width: 100%;
+	height: 600px;
+	overflow: hidden;
+	background-color: #333;
+	/*设置元素垂直居中 */
+	position: absolute;
+	top: 50%;
+	margin-top: -300px;
+
+	/*使子元素具有3D效果*/
+	-webkit-perspective: 800px;
+}
+/*负责元素的平移*/
+.photo {
+	width: 260px;
+	height: 320px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -130px 0 0 -180px;
+	z-index: 1;
+	box-shadow: 0, 0, 1px rgba(0,0,0,.01);	
+	-webkit-transition: all .6s;		
+}
+.photo-center {
+	top: 50%;
+	left: 50%;
+	margin: -130px 0 0 -180px;
+	z-index: 1000;
+}
+.photo .side {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background-color: #eee;
+	/*使内容和padding都包含在border中，意即宽度=content+padding*2 */
+	-webkit-box-sizing: border-box;			
+}
+.photo .side-front .image {
+	width: 100%;
+	height: 250px;
+	line-height: 250px;
+	overflow: hidden;
+}
+.photo .side-front .image img {
+	width: 100%;
+}
+.photo .side-front .caption {
+	text-align: center;
+	font-size: 16px;
+	line-height: 50px;
+}
+.photo .side-back desc {
+font-size: 14px;
+color: #666;
+line-height: 1.5em;
+}	
+
+/*设置3D效果，负责元素的翻转*/
+.photo-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*使用3D效果展示*/
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all 1s ease;
+}
+.photo-wrap .side-front{
+	-webkit-transform: rotateY(0deg);
+}
+.photo-wrap .side-back {
+	-webkit-transform: rotateY(180deg);
+}
+.photo-wrap .side {
+	/*让背面的隐藏起来*/
+	-webkit-backface-visibility: hidden;
+}
+
+/*支持正反两面切换*/
+.photo_front .photo-wrap {
+	-webkit-transform: rotateY(0deg);
+}
+.photo_back .photo-wrap {
+	-webkit-transform: rotateY(180deg);
+}
+
+.nav{
+    width:20%;
+    height:30px;
+    line-height: 30px;
+    position: absolute;
+    left:40%;
+    bottom:20px;
+    z-index:1001;
+  }
+  .nav .i{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #ffaaaa;
+    text-align: center;
+    border-radius: 50%;
+    transform: scale(0.48);
+    transition: all 0.5s;
+  }
+  .nav .i_current{
+    transform: scale(1);
+    background-color: #ffaa00;
+  }
+  .nav .i_back{
+    transform:rotateY(-180deg);
+    background-color: #bfff3f;
+  }
+
+.photo-wrap {
+	-webkit-transform-origin: 0% 50%
+}
+.photo_front .photo-wrap {
+	-webkit-transform: translate(0px , 0px) rotateY(0deg);
+}
+
+.photo_back .photo-wrap {
+	-webkit-transform: translate(260px , 0px) rotateY(180deg);
+}

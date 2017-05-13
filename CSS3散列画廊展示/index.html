@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>海报画廊</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body onselectstart="return false">
+	<div class="wrap" id="wrap">		
+		<!-- 负责平移，旋转 -->
+		<div class="photo photo_front" id="photo_{{index}}" onclick="turn(this)">
+			<!-- 负责翻转 -->
+			<div class="photo-wrap">
+				<div class="side side-front">
+					<div class="image">
+						<img src="photos/{{img}}" alt="some movies">
+					</div>
+					<p class="caption">{{caption}}</p>
+				</div>
+				<div class="side side-back">
+					<p class="desc">{{desc}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="data.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
