@@ -160,6 +160,7 @@
 			var lw = rightSlice.last().width(),
 				lh = rightSlice.last().height(),
 				oloop = Math.floor(this.posterItems.size() / 2);
+				
 			leftSlice.each(function (i) {
 				$(this).css({
 					zIndex: i,

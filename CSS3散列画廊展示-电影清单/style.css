@@ -1,4 +1,4 @@
-body, div, p, img {
+body, div, p, img, h2 {
 			padding: 0;
 			margin: 0;
 }
@@ -8,6 +8,10 @@ body {
 	color: #555;
 	font-size: 14px;
 	-webkit-font-smoothing: antialiased; 
+}
+h2 {
+	text-align: center;
+	line-height: 40px;
 }
 .wrap {
 	width: 100%;
@@ -100,17 +104,16 @@ line-height: 1.5em;
 }
 
 .nav{
-    width:20%;
-    height:30px;
-    line-height: 30px;
+    height:20px;
+    line-height: 20px;
     position: absolute;
     left:40%;
     bottom:20px;
     z-index:1001;
   }
   .nav .i{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display: inline-block;
     cursor: pointer;
     background-color: #ffaaaa;
@@ -121,7 +124,7 @@ line-height: 1.5em;
   }
   .nav .i_current{
     transform: scale(1);
-    background-color: #ffaa00;
+    background-color: #ffa;
   }
   .nav .i_back{
     transform:rotateY(-180deg);
